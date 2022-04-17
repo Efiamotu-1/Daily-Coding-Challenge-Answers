@@ -77,3 +77,71 @@ function diagonalDifference(arr) {
 }
 
 diagonalDifference([[1, 2, 3], [4, 5, 6], [9, 8, 9]] )
+
+//  [3]  Plus Minus
+
+/**Given an array of integers, calculate the ratios of its 
+ * elements that are positive, negative, and zero. 
+ * Print the decimal value of each fraction on a new line with 6
+ *  places after the decimal.
+
+Example
+
+arr = [1,1,0,-1,-1]
+ */
+
+function plusMinus(arr) {
+    // Write your code here
+    let positive = 0;
+    let negative = 0;
+    let zero = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            positive++
+        }
+        if (arr[i] < 0) {
+            negative++
+        }
+        if (arr[i] === 0){
+            zero++
+        }
+    }
+    
+    console.log((positive/arr.length).toFixed(6))
+    console.log((negative/arr.length).toFixed(6))
+    console.log((zero/arr.length).toFixed(6))
+    
+
+}
+plusMinus([1,1,0,-1,-1])
+
+// [4] Mini-Max Sum
+/**Given five positive integers, find the minimum and maximum 
+ * values that can be calculated by summing exactly four of the 
+ * five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+
+ */
+
+ function miniMaxSum(arr) {
+    // Write your code here
+  let arrClone1 = arr.slice() 
+  let arrClone2 = arr.slice() 
+
+  let arrMinor = arrClone1.sort(function(a, b){return a - b;})
+  arrMinor.pop()
+
+  let arrMajor = arrClone2.sort(function(a, b){return b - a;})
+  arrMajor.pop()
+
+  function getSum(a, b) {
+    return a + b;
+  }
+
+  let result1 = arrMinor.reduce(getSum) 
+  let result2 = arrMajor.reduce(getSum)    
+
+  console.log(`${result1} ${result2}`)
+
+}
+
+miniMaxSum([1,2,3,4,5])
