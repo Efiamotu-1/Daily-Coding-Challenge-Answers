@@ -175,3 +175,31 @@ function gradingStudents(grades) {
 return arr
 }
 gradingStudents([73,67,38,33])
+
+// [6] Sales By Match
+
+/**There is a large pile of socks that must be paired by color. Given an
+ *  array of integers representing the color of each sock, 
+ * determine how many pairs of socks with matching colors there are. 
+ * Example
+
+n = 7
+ar = [1,2,1,2,1,3,2]
+*/
+
+function sockMerchant(n, ar) {
+  // Write your code here
+let pair = 0
+for(let i = 1; i < n; i++) {
+for (let j = 0; j < ar.length; j++) {
+ if (i === ar[j]) {
+   pair++
+ }
+}
+  
+}
+console.log(Math.round(pair/2))
+console.log(pair)
+}
+
+sockMerchant(7, [1,2,1,2,1,3,2])
