@@ -189,17 +189,20 @@ ar = [1,2,1,2,1,3,2]
 
 function sockMerchant(n, ar) {
   // Write your code here
-let pair = 0
-for(let i = 1; i < n; i++) {
-for (let j = 0; j < ar.length; j++) {
- if (i === ar[j]) {
-   pair++
- }
-}
-  
-}
-console.log(Math.round(pair/2))
-console.log(pair)
+  let pair = 0
+  let search = new Set();
+  for (let i = 0; i < ar.length; i++) {
+    if (search.has(ar[i])) {
+      pair++
+      console.log(search)
+      search.delete(ar[i])
+    }
+    else {
+      search.add(ar[i])
+    }
+  }
+ console.log(pair)
+  return pair
 }
 
 sockMerchant(7, [1,2,1,2,1,3,2])
