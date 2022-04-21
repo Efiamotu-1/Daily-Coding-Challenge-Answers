@@ -206,3 +206,44 @@ function sockMerchant(n, ar) {
 }
 
 sockMerchant(7, [1,2,1,2,1,3,2])
+
+// [7] COUNTING VALLEYS
+
+/**An avid hiker keeps meticulous records of their hikes. During the last hike that 
+ * took exactly X steps, for every step it was noted if it was an uphill,U , or a downhill, D step.
+ *  Hikes always start and end at sea level, and each step up or down represents a 1 unit change in altitude. We define the following terms:
+
+* A mountain is a sequence of consecutive steps above sea level, starting with a step up from sea level and ending with a step down to sea level.
+* A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
+
+*/
+
+function countingValleys(steps, path) {
+  // Write your code here
+
+}
+
+countingValleys(8, [UDDDUDUU])
+
+//  [8] TIME CONVERSION
+
+/**Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Example
+* s = '12:01:00PM'
+  Return '12:01:00'
+
+* s = '12:01:00AM'
+  Return '00:01:00'
+*/
+
+function timeConversion(s) {
+  // Write your code here
+
+}
+
+timeConversion('12:01:00PM')
