@@ -94,7 +94,7 @@ function convertToF(celsius) {
   return fahrenheit;
 }
 
-console.log(convertToF(-30));
+convertToF(-30);
 
 //  Challenge 2
 function reverseString(str) {

@@ -1,7 +1,4 @@
-            
-            
-            //    [DIFFICULTY : EASY]
-
+//    [DIFFICULTY : EASY]
 
 // [1] Compare the Triplets
 
@@ -30,25 +27,24 @@ The return array is [1, 1] with Alice's score first and Bob's second.
 */
 
 function compareTriplets(a, b) {
-    // Write your code here
+  // Write your code here
 
-    let alice = 0;
-    let bob = 0;
-  
-   for (let i = 0; i <= 2 ; i++)  {
-      if (a[i] > b[i]) {
-    alice++
+  let alice = 0;
+  let bob = 0;
+
+  for (let i = 0; i <= 2; i++) {
+    if (a[i] > b[i]) {
+      alice++;
+    }
+    if (a[i] < b[i]) {
+      bob++;
+    }
   }
-     if (a[i] < b[i]) {
-        bob++       
-       }           
-   }
-   console.log([alice, bob])
-return [alice, bob] 
+  console.log([alice, bob]);
+  return [alice, bob];
 }
 
-compareTriplets([1, 2, 3],[3, 2, 1])
-
+compareTriplets([1, 2, 3], [3, 2, 1]);
 
 // [2] Diagonal Difference
 
@@ -64,19 +60,23 @@ For example, the square matrix arr is shown below:
 */
 
 function diagonalDifference(arr) {
-    // Write your code here 
+  // Write your code here
   let diff = 0;
   const length = arr.length - 1;
   for (let i = 0; i < arr.length; i++) {
     diff += arr[i][i] - arr[i][length - i];
   }
-  console.log(diff)
+  console.log(diff);
   return Math.abs(diff);
-//   The Math.abs() method returns the absolute value of a number. 
-//   Therefore all negative value becomes positive.
+  //   The Math.abs() method returns the absolute value of a number.
+  //   Therefore all negative value becomes positive.
 }
 
-diagonalDifference([[1, 2, 3], [4, 5, 6], [9, 8, 9]] )
+diagonalDifference([
+  [1, 2, 3],
+  [4, 5, 6],
+  [9, 8, 9],
+]);
 
 //  [3]  Plus Minus
 
@@ -91,29 +91,27 @@ arr = [1,1,0,-1,-1]
  */
 
 function plusMinus(arr) {
-    // Write your code here
-    let positive = 0;
-    let negative = 0;
-    let zero = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > 0) {
-            positive++
-        }
-        if (arr[i] < 0) {
-            negative++
-        }
-        if (arr[i] === 0){
-            zero++
-        }
+  // Write your code here
+  let positive = 0;
+  let negative = 0;
+  let zero = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      positive++;
     }
-    
-    console.log((positive/arr.length).toFixed(6))
-    console.log((negative/arr.length).toFixed(6))
-    console.log((zero/arr.length).toFixed(6))
-    
+    if (arr[i] < 0) {
+      negative++;
+    }
+    if (arr[i] === 0) {
+      zero++;
+    }
+  }
 
+  console.log((positive / arr.length).toFixed(6));
+  console.log((negative / arr.length).toFixed(6));
+  console.log((zero / arr.length).toFixed(6));
 }
-plusMinus([1,1,0,-1,-1])
+plusMinus([1, 1, 0, -1, -1]);
 
 // [4] Mini-Max Sum
 /**Given five positive integers, find the minimum and maximum 
@@ -122,31 +120,34 @@ plusMinus([1,1,0,-1,-1])
 
  */
 
- function miniMaxSum(arr) {
-    // Write your code here
-  let arrClone1 = arr.slice() 
-  let arrClone2 = arr.slice() 
+function miniMaxSum(arr) {
+  // Write your code here
+  let arrClone1 = arr.slice();
+  let arrClone2 = arr.slice();
 
-  let arrMinor = arrClone1.sort(function(a, b){return a - b;})
-  arrMinor.pop()
+  let arrMinor = arrClone1.sort(function (a, b) {
+    return a - b;
+  });
+  arrMinor.pop();
 
-  let arrMajor = arrClone2.sort(function(a, b){return b - a;})
-  arrMajor.pop()
+  let arrMajor = arrClone2.sort(function (a, b) {
+    return b - a;
+  });
+  arrMajor.pop();
 
   function getSum(a, b) {
     return a + b;
   }
 
-  let result1 = arrMinor.reduce(getSum) 
-  let result2 = arrMajor.reduce(getSum)    
+  let result1 = arrMinor.reduce(getSum);
+  let result2 = arrMajor.reduce(getSum);
 
-  console.log(`${result1} ${result2}`)
-
+  console.log(`${result1} ${result2}`);
 }
 
-miniMaxSum([1,2,3,4,5])
+miniMaxSum([1, 2, 3, 4, 5]);
 
-//  [5] Grading Students 
+//  [5] Grading Students
 
 /**HackerLand University has the following grading policy:
 
@@ -161,20 +162,19 @@ If the value of grade is less than 38, no rounding occurs as the result will sti
  */
 
 function gradingStudents(grades) {
-    // Write your code here
-  let arr = []
+  // Write your code here
+  let arr = [];
   for (let i = 0; i < grades.length; i++) {
     if (grades[i] >= 38 && grades[i] % 5 >= 3) {
-     arr.push(grades[i] + 5 - (grades[i] % 5))
-    }
-    else {
-    arr.push(grades[i])
+      arr.push(grades[i] + 5 - (grades[i] % 5));
+    } else {
+      arr.push(grades[i]);
     }
   }
-  console.log(arr)
-return arr
+  console.log(arr);
+  return arr;
 }
-gradingStudents([73,67,38,33])
+gradingStudents([73, 67, 38, 33]);
 
 // [6] Sales By Match
 
@@ -189,23 +189,22 @@ ar = [1,2,1,2,1,3,2]
 
 function sockMerchant(n, ar) {
   // Write your code here
-  let pair = 0
+  let pair = 0;
   let search = new Set();
   for (let i = 0; i < ar.length; i++) {
     if (search.has(ar[i])) {
-      pair++
-      console.log(search)
-      search.delete(ar[i])
-    }
-    else {
-      search.add(ar[i])
+      pair++;
+      console.log(search);
+      search.delete(ar[i]);
+    } else {
+      search.add(ar[i]);
     }
   }
- console.log(pair)
-  return pair
+  console.log(pair);
+  return pair;
 }
 
-sockMerchant(7, [1,2,1,2,1,3,2])
+sockMerchant(7, [1, 2, 1, 2, 1, 3, 2]);
 
 // [7] COUNTING VALLEYS
 
@@ -218,26 +217,25 @@ sockMerchant(7, [1,2,1,2,1,3,2])
 Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
 
 */
+console.log("hello")
 
 function countingValleys(steps, path) {
   // Write your code here
   let valleys = 0;
   let level = 0;
-  
+
   for (const step of path) {
-      let prev = level;
-      level = step === 'U' ? level + 1 : level - 1
-      if (prev == -1 && level == 0) {
-          valleys++
-      }
+    let prev = level;
+    level = step === "U" ? level + 1 : level - 1;
+    if (prev == -1 && level == 0) {
+      valleys++;
+    }
   }
-  console.log(valleys)
-  return valleys
-
-
+  console.log(valleys);
+  return valleys;
 }
 
-countingValleys(8, [UDDDUDUU])
+countingValleys(8, "UDDDUDUU");
 
 //  [8] TIME CONVERSION
 
@@ -256,7 +254,122 @@ Example
 
 function timeConversion(s) {
   // Write your code here
+}
+
+timeConversion("12:01:00PM");
+
+//  [9] Find Digits
+
+/** An integer d is a divisor of an integer n if the remainder of n / d = 0
+
+.
+
+Given an integer, for each digit that makes up the integer determine whether it is a divisor. 
+Count the number of divisors occurring within the integer.
+
+Example
+
+n = 124
+
+Check whether 1, 2 and 4 are divisors of 124. All 3 numbers divide evenly into 124 so return 3.  */
+
+function findDigits(n) {
+  // Write your code here
+   let count = 0;
+console.log(n)
+  let num = "";
+  num = n.toString();
+console.log(num)
+for (let i = 0; i < num.length; i++) {
+  if (n % num[i] === 0 && n != 0) {
+    count++
+  }
+}
+console.log(count)
+return count;
 
 }
 
-timeConversion('12:01:00PM')
+findDigits(1012)
+
+// [10] EXTRA LONG FACTORIALS (MEDIUM)
+/**The factorial of the integer n, written n!, is defined as: 
+ * Calculate and print the factorial of a given integer.
+ * For example, if n = 30, we calculate 30 X 29 X 28 X.... X 2 X 1 and get 265252859812191058636308480000000
+ */
+
+ function extraLongFactorials(n) {
+  n = BigInt(n)
+  let result = BigInt(1);
+  
+  for(let i = n; i >= 1; i--) {
+    result *= i;
+  }
+  console.log(result)
+  return result.toString();
+}
+
+extraLongFactorials(25)
+
+
+// [11] MULTIPLICATION TABLE
+
+/** Given an integer, n, print its first 10 multiples. Each multiple n X i 
+ * should be printed on a new line in the form: n x i = result. */
+
+ function main() {
+  const n = parseInt(readLine().trim(), 10);
+
+  let result = ""
+  for(let i = 1; 10 >= i; i++ ) {
+      result += `${n} x ${i} = ${n * i}\n` 
+  }
+  console.log(result)
+
+
+}
+
+main();
+
+//  [12] CLASS vs. INSTANCE
+
+/**Write a Person class with an instance variable, age, and a constructor that takes an integer, initial age, as a parameter. 
+ The constructor must assign initial age to age after confirming the argument passed as initial age is not negative; if a negative argument is passed as initial age, 
+ the constructor should set age to 0 and print Age is not valid, setting age to 0.. 
+ In addition, you must write the following instance methods:
+
+  yearPasses() should increase the age instance variable by 1
+.
+amIOld() should perform the following conditional actions:
+
+If age < 13, print You are young..
+If age >= 13 and age < 18, print You are a teenager..
+Otherwise, print You are old.. */
+
+function Person(initialAge) {
+  // Add some more code to run some checks on initialAge
+  if (initialAge < 0) {
+    console.log("Age is not valid, setting age to 0.");
+    this.age = 0;
+  } else {
+    this.age = initialAge;
+  }
+
+  this.amIOld = function() {
+    // Do some computations in here and print out the correct statement to the console
+    if (this.age < 13) {
+      console.log("You are young.");
+    } else if (this.age >= 13 && this.age < 18) {
+      console.log("You are a teenager.");
+    } else {
+      console.log("You are old.");
+    }
+  };
+
+  this.yearPasses = function(){
+    // Increment the age of the person in here
+    this.age++;
+  };
+}
+
+console.log(Person.amIOld(2))
