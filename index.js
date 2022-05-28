@@ -372,4 +372,64 @@ function Person(initialAge) {
   };
 }
 
-console.log(Person.amIOld(2))
+let person = new Person()
+
+console.log(person.amIOld(2))
+
+// LET'S REVIEW
+/** Given a string, S, of N length that is indexed from 0 to N - 1, print its even-indexed and odd-indexed characters as 2
+
+space-separated strings on a single line (see the Sample below for more detail).
+
+Note: 0 is considered to be an even index. 
+Example
+
+s = adbecf
+Print abc def
+*/
+
+function processData(input) {
+  //Ie: "Hacker" and  "Rank" becomes:
+  //"Hce akr" even values - odd values [H, a, c, k, e, r] equals [0, 1, 2, 3, 4, 5]
+  //"Rn ak" even values - odd values [R, a, n, k] equals [0, 1, 2, 3]
+  var myArray = input.split("\n"); //Splitting string between each newline into myArray values.
+  //input is: "2\nHacker\nRank". myArray = [[2], ["Hacker"], ["Rank"]], [[0], [1], [2]]
+  var evenChar = "";
+  var oddChar = "";
+
+  for (var i = 1; i < myArray.length; i++){ //Starting from 1 (Hacker) to length of array (3 values) &amp; incrementing by 1.
+      for (var j = 0; j < myArray[i].length; j++) {//j is counting but array is already set to start at "Hacker" element.
+          if (j%2 == 0) { //If j mod 2 equals 0, that means it's an even number.
+              evenChar += myArray[i][j]; //Therefore, add value to evenChar string.
+          } else {
+              oddChar += myArray[i][j]; //If odd, add value to oddChar string.
+          }
+      }
+      console.log(evenChar + " " + oddChar);
+      evenChar = "";
+      oddChar = "";
+  }
+}
+
+
+
+//  ARRAY OF SUNSHINE
+/** Given an array  A of N integers, print A's elements in reverse order as a single line of space-separated numbers.
+
+Example
+A = [1,2,3,4]
+Print 4 3 2 1. Each integer is separated by one space.
+*/
+
+function main() {
+  const n = parseInt(readLine().trim(), 10);
+
+  const arr = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
+  
+  let result = ""
+  for (let i = arr.length - 1; i >= 0 ; i--) {
+      result += arr[i] + " "
+  }
+  console.log(result)
+  return result
+}

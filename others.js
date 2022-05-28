@@ -250,7 +250,7 @@ function translatePigLatin(str) {
   return newStr;
 }
 
-translatePigLatin("aonsonant");
+translatePigLatin("consonant");
 
 //  Challenge 10
 function pairElement(str) {
@@ -533,3 +533,84 @@ function sockMerchant(n, ar) {
 }
 
 sockMerchant(7, [1,2,1,2,1,3,2])
+
+
+
+// Dami Solutions
+// Sum all numbers in a range
+function sumAll(arr) {
+  
+  if(arr[0]>arr[1]){
+    let temp = arr[0];
+    arr[0] = arr[1];
+    arr[1] = temp; 
+    
+  }
+  let sum = arr[0];
+  for(let i=arr[0]+1;i<=arr[arr.length-1];i++){
+    sum+=i; 
+  }
+  
+  
+  
+  return sum;
+  
+}
+
+sumAll([1, 4]);
+
+// Seek and destroy
+function destroyer(arr) {
+  const firstArray = arguments[0];
+  let myArr = []
+  let isPresent =false;
+  for(let i=0;i<firstArray.length;i++){
+    //console.log(firstArray[i])   
+    for(let j=1;j<arguments.length;j++){
+      if(firstArray[i]==arguments[j]){
+        isPresent = true;
+      }
+      
+    }   
+    if(!isPresent){
+        myArr.push(firstArray[i]);
+      }
+      isPresent = false;          
+  }
+  
+  
+  console.log(myArr)
+  
+  return myArr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+//  Pig Latin
+function translatePigLatin(str) {
+  let cons = ["b","c","d","f","g","h","l","j","k","m","n","p","q","r","s","t","v","w","x","y","z"]
+  let  bool =true;
+  let i =1;
+  for (const con of cons){ console.log(con)
+      if(str[0]==con){
+          str = str.slice(1);
+          str = str.concat("",con+"ay");
+          bool =false;
+          
+          
+          
+      }if(str[i]==con&&i!=0){
+          str = str.slice(1);
+          str = str.concat("",con+"ay");
+      }
+      
+
+  }
+
+  if(bool){str = str.concat("","way");}
+  
+  console.log(str)
+  return str;
+}
+
+translatePigLatin("consonant");
