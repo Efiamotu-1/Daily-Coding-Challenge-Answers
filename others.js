@@ -614,3 +614,42 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("consonant");
+
+//  Staircase
+
+function staircase(n) {
+  let output ="";
+  // Write your code 
+  const printLn = (i)=>{
+      
+        let line="";
+        for(let k=0;k<n-i;k++){
+                  line+=" "
+              }
+          for(let j =1;j<=i;j++){
+              
+              line+="#"
+          }
+      return line;
+  }
+  for(let i = 1;i<=n;i++){
+      if(i==n){
+          output += `\n${printLn(i)}`;
+      }else{
+          if(i==1){
+          output += `${printLn(i)}`;
+          }else{
+              output += `\n${printLn(i)}`;
+          }
+      }
+  }
+  console.log(output)
+  return output;
+}
+
+for (const key in object) {
+  if (Object.hasOwnProperty.call(object, key)) {
+    const element = object[key];
+    
+  }
+}
